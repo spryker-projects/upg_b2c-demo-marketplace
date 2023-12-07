@@ -242,6 +242,7 @@ class PublisherDependencyProvider extends SprykerPublisherDependencyProvider
             new ProductConcretePublisherTriggerPlugin(),
             new ShipmentTypePublisherTriggerPlugin(),
             new StorePublisherTriggerPlugin(),
+            new ProductConcretePublisherTriggerPlugin(),
         ];
     }
 
