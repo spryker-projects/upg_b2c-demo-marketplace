@@ -7,12 +7,14 @@
 
 namespace Pyz\Zed\StoreStorage;
 
-use Pyz\Zed\Synchronization\SynchronizationConfig;
+use Spryker\Shared\CompanyUserStorage\CompanyUserStorageConfig;
 use Spryker\Shared\CustomerAccessStorage\CustomerAccessStorageConstants;
 use Spryker\Shared\GlossaryStorage\GlossaryStorageConfig;
 use Spryker\Shared\MerchantSearch\MerchantSearchConfig;
 use Spryker\Shared\MerchantStorage\MerchantStorageConfig;
 use Spryker\Shared\NavigationStorage\NavigationStorageConstants;
+use Spryker\Shared\ProductMeasurementUnitStorage\ProductMeasurementUnitStorageConfig;
+use Spryker\Shared\ProductPackagingUnitStorage\ProductPackagingUnitStorageConfig;
 use Spryker\Shared\ProductReviewSearch\ProductReviewSearchConfig;
 use Spryker\Shared\SalesReturnSearch\SalesReturnSearchConfig;
 use Spryker\Zed\StoreStorage\StoreStorageConfig as SprykerStoreStorageConfig;
@@ -40,6 +42,9 @@ class StoreStorageConfig extends SprykerStoreStorageConfig
             MerchantStorageConfig::MERCHANT_RESOURCE_NAME,
             SalesReturnSearchConfig::RETURN_REASON_RESOURCE_NAME,
             MerchantSearchConfig::MERCHANT_RESOURCE_NAME,
+            ProductMeasurementUnitStorageConfig::PRODUCT_MEASUREMENT_UNIT_RESOURCE_NAME,
+            ProductPackagingUnitStorageConfig::PRODUCT_PACKAGING_UNIT_RESOURCE_NAME,
+            CompanyUserStorageConfig::COMPANY_USER_RESOURCE_NAME,
         ];
     }
 }
