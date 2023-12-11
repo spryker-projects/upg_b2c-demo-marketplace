@@ -10,7 +10,9 @@ namespace Pyz\Zed\Checkout;
 use Spryker\Zed\Availability\Communication\Plugin\ProductsAvailableCheckoutPreConditionPlugin;
 use Spryker\Zed\CartNote\Communication\Plugin\Checkout\CartNoteSaverPlugin;
 use Spryker\Zed\Checkout\CheckoutDependencyProvider as SprykerCheckoutDependencyProvider;
+use Spryker\Zed\Customer\Communication\Plugin\Checkout\CustomerAddressSalutationCheckoutPreConditionPlugin;
 use Spryker\Zed\Customer\Communication\Plugin\Checkout\CustomerOrderSavePlugin;
+use Spryker\Zed\Customer\Communication\Plugin\Checkout\CustomerSalutationCheckoutPreConditionPlugin;
 use Spryker\Zed\Customer\Communication\Plugin\CustomerPreConditionCheckerPlugin;
 use Spryker\Zed\Discount\Communication\Plugin\Checkout\DiscountOrderSavePlugin;
 use Spryker\Zed\Discount\Communication\Plugin\Checkout\VoucherDiscountMaxUsageCheckoutPreConditionPlugin;
@@ -39,6 +41,7 @@ use Spryker\Zed\Sales\Communication\Plugin\SalesOrderExpanderPlugin;
 use Spryker\Zed\SalesOrderThreshold\Communication\Plugin\Checkout\SalesOrderThresholdCheckoutPreConditionPlugin;
 use Spryker\Zed\SalesOrderThreshold\Communication\Plugin\Checkout\SalesOrderThresholdExpenseSavePlugin;
 use Spryker\Zed\SalesPayment\Communication\Plugin\Checkout\SalesPaymentCheckoutDoSaveOrderPlugin;
+use Spryker\Zed\SalesProductConfiguration\Communication\Plugin\Checkout\ProductConfigurationOrderSaverPlugin;
 use Spryker\Zed\Shipment\Communication\Plugin\Checkout\SalesOrderShipmentSavePlugin;
 use Spryker\Zed\ShipmentCheckoutConnector\Communication\Plugin\Checkout\ShipmentCheckoutPreCheckPlugin;
 
@@ -69,6 +72,8 @@ class CheckoutDependencyProvider extends SprykerCheckoutDependencyProvider
             new ProductExistsCheckoutPreConditionPlugin(),
             new ProductApprovalCheckoutPreConditionPlugin(),
             new ProductConfigurationCheckoutPreConditionPlugin(),
+            new CustomerSalutationCheckoutPreConditionPlugin(),
+            new CustomerAddressSalutationCheckoutPreConditionPlugin(),
         ];
     }
 
@@ -100,7 +105,8 @@ class CheckoutDependencyProvider extends SprykerCheckoutDependencyProvider
             new ProductBundleOrderSaverPlugin(),
             new SalesPaymentCheckoutDoSaveOrderPlugin(),
             new GiftCardCheckoutDoSaveOrderPlugin(),
-            new SalesOrderThresholdExpenseSavePlugin(), #SalesOrderThresholdFeature
+            new SalesOrderThresholdExpenseSavePlugin(),
+            new ProductConfigurationOrderSaverPlugin(), #SalesOrderThresholdFeature
         ];
     }
 

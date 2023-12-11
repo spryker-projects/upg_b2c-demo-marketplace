@@ -8,8 +8,6 @@
 namespace Pyz\Zed\PersistentCart;
 
 use Spryker\Zed\PersistentCart\PersistentCartDependencyProvider as SprykerPersistentCartDependencyProvider;
-use Spryker\Zed\PersistentCartExtension\Dependency\Plugin\QuoteItemFinderPluginInterface;
-use Spryker\Zed\ProductBundle\Communication\Plugin\PersistentCart\BundleProductQuoteItemFinderPlugin;
 use Spryker\Zed\ProductBundle\Communication\Plugin\PersistentCart\RemoveBundleChangeRequestExpanderPlugin;
 
 class PersistentCartDependencyProvider extends SprykerPersistentCartDependencyProvider
@@ -19,7 +17,7 @@ class PersistentCartDependencyProvider extends SprykerPersistentCartDependencyPr
      */
     protected function getQuoteItemFinderPlugin(): QuoteItemFinderPluginInterface
     {
-        return new BundleProductQuoteItemFinderPlugin(); #ProductBundleFeature
+        return new BundleProductQuoteItemFinderPlugin();
     }
 
     /**
