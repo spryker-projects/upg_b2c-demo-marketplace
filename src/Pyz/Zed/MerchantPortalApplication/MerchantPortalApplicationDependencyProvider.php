@@ -47,10 +47,10 @@ class MerchantPortalApplicationDependencyProvider extends SprykerMerchantPortalA
             new FormApplicationPlugin(),
             new ValidatorApplicationPlugin(),
             new GuiTableApplicationPlugin(),
-            new SecurityApplicationPlugin(),
             new ZedUiApplicationPlugin(),
             new AclEntityApplicationPlugin(),
             new MerchantPortalEventDispatcherApplicationPlugin(),
+            new Spryker\Zed\Security\Communication\Plugin\Application\ZedSecurityApplicationPlugin(),
         ];
     }
 }
