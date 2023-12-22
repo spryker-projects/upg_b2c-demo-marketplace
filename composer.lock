@@ -14174,27 +14174,29 @@
         },
         {
             "name": "spryker-shop/sales-service-point-widget",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spryker-shop/sales-service-point-widget.git",
-                "reference": "e442a1d151f154b750df280c8c96c61725619ee6"
+                "reference": "1ca1cc9b08fe72e40e1469424aee063a5cb03bf5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spryker-shop/sales-service-point-widget/zipball/e442a1d151f154b750df280c8c96c61725619ee6",
-                "reference": "e442a1d151f154b750df280c8c96c61725619ee6",
+                "url": "https://api.github.com/repos/spryker-shop/sales-service-point-widget/zipball/1ca1cc9b08fe72e40e1469424aee063a5cb03bf5",
+                "reference": "1ca1cc9b08fe72e40e1469424aee063a5cb03bf5",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.0",
+                "php": ">=8.1",
+                "spryker-shop/customer-reorder-widget-extension": "^1.2.0",
                 "spryker-shop/shop-ui": "^1.72.0",
                 "spryker/kernel": "^3.52.0",
                 "spryker/sales-service-point": "^1.0.0",
                 "spryker/transfer": "^3.27.0"
             },
             "require-dev": {
-                "spryker/code-sniffer": "*"
+                "spryker/code-sniffer": "*",
+                "spryker/testify": "*"
             },
             "suggest": {
                 "spryker/router": "Use this module if you need use the RouterProviderPlugin.",
@@ -14217,9 +14219,9 @@
             ],
             "description": "SalesServicePointWidget module",
             "support": {
-                "source": "https://github.com/spryker-shop/sales-service-point-widget/tree/1.0.0"
+                "source": "https://github.com/spryker-shop/sales-service-point-widget/tree/1.1.0"
             },
-            "time": "2023-11-01T17:06:49+00:00"
+            "time": "2023-11-21T09:36:32+00:00"
         },
         {
             "name": "spryker-shop/security-blocker-page",
@@ -14327,16 +14329,16 @@
         },
         {
             "name": "spryker-shop/service-point-widget",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spryker-shop/service-point-widget.git",
-                "reference": "08635a79d1c1f9e18a5c8de6595f44558f4ea2cc"
+                "reference": "24d3d338eb18f244d0fc79e0bd15414efbea9901"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spryker-shop/service-point-widget/zipball/08635a79d1c1f9e18a5c8de6595f44558f4ea2cc",
-                "reference": "08635a79d1c1f9e18a5c8de6595f44558f4ea2cc",
+                "url": "https://api.github.com/repos/spryker-shop/service-point-widget/zipball/24d3d338eb18f244d0fc79e0bd15414efbea9901",
+                "reference": "24d3d338eb18f244d0fc79e0bd15414efbea9901",
                 "shasum": ""
             },
             "require": {
@@ -14377,9 +14379,9 @@
             ],
             "description": "ServicePointWidget module",
             "support": {
-                "source": "https://github.com/spryker-shop/service-point-widget/tree/1.1.0"
+                "source": "https://github.com/spryker-shop/service-point-widget/tree/1.2.0"
             },
-            "time": "2023-11-02T20:09:30+00:00"
+            "time": "2023-11-21T09:36:32+00:00"
         },
         {
             "name": "spryker-shop/session-agent-validation",
