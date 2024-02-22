@@ -11,5 +11,6 @@ use Spryker\Zed\UserMerchantPortalGui\UserMerchantPortalGuiConfig as SprykerUser
 
 class UserMerchantPortalGuiConfig extends SprykerUserMerchantPortalGuiConfig
 {
+    protected const IS_SECURITY_BLOCKER_FOR_MERCHANT_USER_EMAIL_CHANGING_ENABLED = true;
     protected const IS_EMAIL_UPDATE_PASSWORD_VERIFICATION_ENABLED = true;
 }
