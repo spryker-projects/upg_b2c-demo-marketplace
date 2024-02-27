@@ -25088,16 +25088,16 @@
         },
         {
             "name": "spryker/customer",
-            "version": "7.53.0",
+            "version": "7.55.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spryker/customer.git",
-                "reference": "3a201143cb7b4033f11a2050120d4bd744c160eb"
+                "reference": "b17fa1926524af1e88b3503d2751b50b08ab0258"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spryker/customer/zipball/3a201143cb7b4033f11a2050120d4bd744c160eb",
-                "reference": "3a201143cb7b4033f11a2050120d4bd744c160eb",
+                "url": "https://api.github.com/repos/spryker/customer/zipball/b17fa1926524af1e88b3503d2751b50b08ab0258",
+                "reference": "b17fa1926524af1e88b3503d2751b50b08ab0258",
                 "shasum": ""
             },
             "require": {
@@ -25106,7 +25106,7 @@
                 "spryker/authorization-extension": "^1.0.0",
                 "spryker/checkout-extension": "^1.2.0",
                 "spryker/country": "^3.1.0 || ^4.0.0",
-                "spryker/customer-extension": "^1.4.0",
+                "spryker/customer-extension": "^1.5.0",
                 "spryker/gui": "^3.39.0",
                 "spryker/kernel": "^3.72.0",
                 "spryker/locale": "^3.0.0 || ^4.0.0",
@@ -25164,9 +25164,9 @@
             ],
             "description": "Customer module",
             "support": {
-                "source": "https://github.com/spryker/customer/tree/7.53.0"
+                "source": "https://github.com/spryker/customer/tree/7.55.1"
             },
-            "time": "2023-11-24T22:16:26+00:00"
+            "time": "2024-01-03T14:15:34+00:00"
         },
         {
             "name": "spryker/customer-access",
@@ -54915,16 +54915,16 @@
         },
         {
             "name": "spryker/state-machine",
-            "version": "2.19.0",
+            "version": "2.20.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spryker/state-machine.git",
-                "reference": "f9305392e0336cfbbf6ba581a7a1ff649662e663"
+                "reference": "c14a7b53e43d223cbedd85ed2eed976041f93e28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spryker/state-machine/zipball/f9305392e0336cfbbf6ba581a7a1ff649662e663",
-                "reference": "f9305392e0336cfbbf6ba581a7a1ff649662e663",
+                "url": "https://api.github.com/repos/spryker/state-machine/zipball/c14a7b53e43d223cbedd85ed2eed976041f93e28",
+                "reference": "c14a7b53e43d223cbedd85ed2eed976041f93e28",
                 "shasum": ""
             },
             "require": {
@@ -54936,6 +54936,7 @@
                 "spryker/symfony": "^3.0.0",
                 "spryker/transfer": "^3.25.0",
                 "spryker/util-network": "^1.1.0",
+                "spryker/util-sanitize-xss": "^1.1.0",
                 "spryker/util-text": "^1.1.0"
             },
             "require-dev": {
@@ -54962,9 +54963,9 @@
             ],
             "description": "StateMachine module",
             "support": {
-                "source": "https://github.com/spryker/state-machine/tree/2.19.0"
+                "source": "https://github.com/spryker/state-machine/tree/2.20.0"
             },
-            "time": "2023-11-02T20:09:27+00:00"
+            "time": "2023-11-29T09:16:52+00:00"
         },
         {
             "name": "spryker/step-engine",
