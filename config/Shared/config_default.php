@@ -768,6 +768,14 @@ $config[MessageBrokerAwsConstants::MESSAGE_TO_CHANNEL_MAP] = [
     ConfigureTaxAppTransfer::class => 'tax-commands',
     DeleteTaxAppTransfer::class => 'tax-commands',
     SubmitPaymentTaxInvoiceTransfer::class => 'payment-tax-invoice-commands',
+    \Generated\Shared\Transfer\AddPaymentMethodTransfer::class => 'payment-method-commands',
+    \Generated\Shared\Transfer\DeletePaymentMethodTransfer::class => 'payment-method-commands',
+    \Generated\Shared\Transfer\PaymentAuthorizedTransfer::class => 'payment-events',
+    \Generated\Shared\Transfer\PaymentAuthorizationFailedTransfer::class => 'payment-events',
+    \Generated\Shared\Transfer\PaymentCapturedTransfer::class => 'payment-events',
+    \Generated\Shared\Transfer\PaymentCaptureFailedTransfer::class => 'payment-events',
+    \Generated\Shared\Transfer\PaymentCanceledTransfer::class => 'payment-events',
+    \Generated\Shared\Transfer\PaymentCancellationFailedTransfer::class => 'payment-events',
 ];
 
 $config[MessageBrokerConstants::CHANNEL_TO_RECEIVER_TRANSPORT_MAP] = [
