@@ -69,16 +69,12 @@ use Spryker\Zed\MerchantStorage\Communication\Plugin\Publisher\Merchant\Merchant
 use Spryker\Zed\MerchantStorage\Communication\Plugin\Publisher\MerchantPublisherTriggerPlugin;
 use Spryker\Zed\PriceProductOfferStorage\Communication\Plugin\Publisher\PriceProductOffer\PriceProductStoreWritePublisherPlugin;
 use Spryker\Zed\PriceProductOfferStorage\Communication\Plugin\Publisher\PriceProductOfferPublisherTriggerPlugin;
-use Spryker\Zed\Product\Communication\Plugin\Publisher\ProductAbstractUpdatedMessageBrokerPublisherPlugin;
-use Spryker\Zed\Product\Communication\Plugin\Publisher\ProductConcreteCreatedMessageBrokerPublisherPlugin;
-use Spryker\Zed\Product\Communication\Plugin\Publisher\ProductConcreteDeletedMessageBrokerPublisherPlugin;
-use Spryker\Zed\Product\Communication\Plugin\Publisher\ProductConcreteExportedMessageBrokerPublisherPlugin;
-use Spryker\Zed\Product\Communication\Plugin\Publisher\ProductConcreteUpdatedMessageBrokerPublisherPlugin;
 use Spryker\Zed\ProductAlternativeStorage\Communication\Plugin\Publisher\ProductAlternativePublisherTriggerPlugin;
 use Spryker\Zed\ProductBundleStorage\Communication\Plugin\Publisher\ProductBundle\ProductBundlePublishWritePublisherPlugin;
 use Spryker\Zed\ProductBundleStorage\Communication\Plugin\Publisher\ProductBundle\ProductBundleWritePublisherPlugin;
 use Spryker\Zed\ProductBundleStorage\Communication\Plugin\Publisher\ProductBundlePublisherTriggerPlugin;
 use Spryker\Zed\ProductBundleStorage\Communication\Plugin\Publisher\ProductConcrete\ProductBundleWritePublisherPlugin as ProductConcreteProductBundleWritePublisherPlugin;
+use Spryker\Zed\ProductCategory\Communication\Plugin\Publisher\ProductCategoryProductUpdatedEventTriggerPlugin;
 use Spryker\Zed\ProductCategoryStorage\Communication\Plugin\Publisher\Category\CategoryIsActiveAndCategoryKeyWritePublisherPlugin;
 use Spryker\Zed\ProductCategoryStorage\Communication\Plugin\Publisher\Category\CategoryStoreDeletePublisherPlugin;
 use Spryker\Zed\ProductCategoryStorage\Communication\Plugin\Publisher\Category\CategoryStoreWriteForPublishingPublisherPlugin;
@@ -212,6 +208,7 @@ class PublisherDependencyProvider extends SprykerPublisherDependencyProvider
             $this->getStoreStoragePlugins(),
             $this->getAssetStoragePlugins(),
             $this->getCustomerStoragePlugins(),
+            $this->getProductMessageBrokerPlugins(),
             $this->getProductExportPlugins(),
             $this->getProductConfigurationStoragePlugins(),
             $this->getProductOfferAvailabilityStoragePlugins(),
@@ -581,20 +578,6 @@ class PublisherDependencyProvider extends SprykerPublisherDependencyProvider
     /**
      * @return array<\Spryker\Zed\PublisherExtension\Dependency\Plugin\PublisherPluginInterface>
      */
-    protected function getProductExportPlugins(): array
-    {
-        return [
-            new ProductConcreteExportedMessageBrokerPublisherPlugin(),
-            new ProductConcreteCreatedMessageBrokerPublisherPlugin(),
-            new ProductConcreteUpdatedMessageBrokerPublisherPlugin(),
-            new ProductConcreteDeletedMessageBrokerPublisherPlugin(),
-            new ProductAbstractUpdatedMessageBrokerPublisherPlugin(),
-        ];
-    }
-
-    /**
-     * @return array<\Spryker\Zed\PublisherExtension\Dependency\Plugin\PublisherPluginInterface>
-     */
     protected function getProductOfferAvailabilityStoragePlugins(): array
     {
         return [
@@ -707,6 +690,21 @@ class PublisherDependencyProvider extends SprykerPublisherDependencyProvider
             new ProductOfferStoreProductOfferShipmentTypeWritePublisherPlugin(),
             new ShipmentTypeProductOfferShipmentTypeWritePublisherPlugin(),
             new ShipmentTypeStoreProductOfferShipmentTypeWritePublisherPlugin(),
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public function getProductMessageBrokerPlugins(): array
+    {
+        return [
+            new ProductConcreteExportedMessageBrokerPublisherPlugin(),
+            new ProductConcreteCreatedMessageBrokerPublisherPlugin(),
+            new ProductConcreteUpdatedMessageBrokerPublisherPlugin(),
+            new ProductConcreteDeletedMessageBrokerPublisherPlugin(),
+            new ProductAbstractUpdatedMessageBrokerPublisherPlugin(),
+            new ProductCategoryProductUpdatedEventTriggerPlugin(),
         ];
     }
 }
