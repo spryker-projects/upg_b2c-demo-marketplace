@@ -61,14 +61,6 @@ class MessageBrokerDependencyProvider extends SprykerMessageBrokerDependencyProv
     public function getMessageHandlerPlugins(): array
     {
         return [
-            new PaymentCancelReservationFailedMessageHandlerPlugin(),
-            new PaymentConfirmationFailedMessageHandlerPlugin(),
-            new PaymentConfirmedMessageHandlerPlugin(),
-            new PaymentPreauthorizationFailedMessageHandlerPlugin(),
-            new PaymentPreauthorizedMessageHandlerPlugin(),
-            new PaymentReservationCanceledMessageHandlerPlugin(),
-            new PaymentRefundedMessageHandlerPlugin(),
-            new PaymentRefundFailedMessageHandlerPlugin(),
             new PaymentMethodMessageHandlerPlugin(),
             new AssetMessageHandlerPlugin(),
             new ProductExportMessageHandlerPlugin(),
@@ -76,6 +68,7 @@ class MessageBrokerDependencyProvider extends SprykerMessageBrokerDependencyProv
             new ProductReviewAddReviewsMessageHandlerPlugin(),
             new MerchantMessageHandlerPlugin(),
             new TaxAppMessageHandlerPlugin(),
+            new Spryker\Zed\Payment\Communication\Plugin\MessageBroker\PaymentOperationsMessageHandlerPlugin(),
         ];
     }
 

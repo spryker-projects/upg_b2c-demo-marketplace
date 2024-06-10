@@ -54,6 +54,7 @@ class GlueBackendApiApplicationDependencyProvider extends SprykerGlueBackendApiA
             new RouterApplicationPlugin(),
             new EventDispatcherApplicationPlugin(),
             new StoreHttpHeaderApplicationPlugin(),
+            new Spryker\Glue\Locale\Plugin\Application\LocaleApplicationPlugin(),
         ];
     }
 

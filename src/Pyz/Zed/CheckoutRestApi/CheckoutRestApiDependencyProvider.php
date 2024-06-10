@@ -54,12 +54,12 @@ class CheckoutRestApiDependencyProvider extends SprykerCheckoutRestApiDependency
     protected function getCheckoutDataValidatorPlugins(): array
     {
         return [
-            new CountryCheckoutDataValidatorPlugin(),
             new ShipmentMethodCheckoutDataValidatorPlugin(),
             new ItemsCheckoutDataValidatorPlugin(),
             new CustomerAddressCheckoutDataValidatorPlugin(),
             new ShipmentTypeCheckoutDataValidatorPlugin(),
             new ClickAndCollectExampleReplaceCheckoutDataValidatorPlugin(),
+            new Spryker\Zed\Country\Communication\Plugin\CheckoutRestApi\CountriesCheckoutDataValidatorPlugin(),
         ];
     }
 

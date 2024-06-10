@@ -59,7 +59,7 @@ class CustomerPageDependencyProvider extends SprykerShopCustomerPageDependencyPr
     protected function getAfterCustomerAuthenticationSuccessPlugins(): array
     {
         return [
-            new FixAgentTokenAfterCustomerAuthenticationSuccessPlugin(),
+            new SprykerShop\Yves\AgentPage\Plugin\Security\UpdateAgentTokenAfterCustomerAuthenticationSuccessPlugin(),
             new UpdateAgentSessionAfterCustomerAuthenticationSuccessPlugin(),
         ];
     }

@@ -59,4 +59,17 @@ class TransferConfig extends SprykerTransferConfig
     {
         return true;
     }
+    /**
+     * Specification:
+     * - Returns strategy for merging property descriptions.
+     * - Possible values are: TransferConstants::PROPERTY_DESCRIPTION_MERGE_STRATEGY_DEFAULT, TransferConstants::PROPERTY_DESCRIPTION_MERGE_STRATEGY_GET_FIRST, TransferConstants::PROPERTY_DESCRIPTION_MERGE_STRATEGY_MERGE.
+     *
+     * @api
+     *
+     * @return string
+     */
+    public function getPropertyDescriptionMergeStrategy() : string
+    {
+        return Spryker\Shared\Transfer\TransferConstants::PROPERTY_DESCRIPTION_MERGE_STRATEGY_GET_FIRST;
+    }
 }

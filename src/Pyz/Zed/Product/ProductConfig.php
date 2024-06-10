@@ -30,6 +30,16 @@ class ProductConfig extends SprykerProductConfig
             ProductImageEvents::PRODUCT_IMAGE_PRODUCT_ABSTRACT_PUBLISH,
             PriceProductEvents::PRICE_ABSTRACT_PUBLISH,
             ProductReviewEvents::PRODUCT_ABSTRACT_REVIEW_PUBLISH,
+            \Spryker\Zed\ProductCategory\Dependency\ProductCategoryEvents::ENTITY_SPY_PRODUCT_CATEGORY_CREATE,
+            \Spryker\Zed\ProductCategory\Dependency\ProductCategoryEvents::ENTITY_SPY_PRODUCT_CATEGORY_DELETE,
+            \Spryker\Zed\ProductLabel\Dependency\ProductLabelEvents::ENTITY_SPY_PRODUCT_LABEL_PRODUCT_ABSTRACT_CREATE,
+            \Spryker\Zed\ProductLabel\Dependency\ProductLabelEvents::ENTITY_SPY_PRODUCT_LABEL_PRODUCT_ABSTRACT_DELETE,
+            \Spryker\Zed\PriceProduct\Dependency\PriceProductEvents::ENTITY_SPY_PRICE_PRODUCT_CREATE,
+            \Spryker\Zed\PriceProduct\Dependency\PriceProductEvents::ENTITY_SPY_PRICE_PRODUCT_UPDATE,
+            \Spryker\Zed\ProductReview\Dependency\ProductReviewEvents::ENTITY_SPY_PRODUCT_REVIEW_CREATE,
+            \Spryker\Zed\ProductReview\Dependency\ProductReviewEvents::ENTITY_SPY_PRODUCT_REVIEW_UPDATE,
+            \Spryker\Zed\ProductImage\Dependency\ProductImageEvents::ENTITY_SPY_PRODUCT_IMAGE_SET_CREATE,
+            \Spryker\Zed\ProductImage\Dependency\ProductImageEvents::ENTITY_SPY_PRODUCT_IMAGE_SET_UPDATE,
         ];
     }
 
@@ -46,6 +56,17 @@ class ProductConfig extends SprykerProductConfig
             ProductEvents::PRODUCT_CONCRETE_PUBLISH,
             ProductBundleStorageConfig::PRODUCT_BUNDLE_PUBLISH,
             ProductImageEvents::PRODUCT_IMAGE_PRODUCT_CONCRETE_PUBLISH,
+            \Spryker\Shared\ProductBundleStorage\ProductBundleStorageConfig::ENTITY_SPY_PRODUCT_BUNDLE_CREATE,
+            \Spryker\Shared\ProductBundleStorage\ProductBundleStorageConfig::ENTITY_SPY_PRODUCT_BUNDLE_UPDATE,
+            \Spryker\Zed\ProductImage\Dependency\ProductImageEvents::ENTITY_SPY_PRODUCT_IMAGE_SET_CREATE,
+            \Spryker\Zed\ProductImage\Dependency\ProductImageEvents::ENTITY_SPY_PRODUCT_IMAGE_SET_UPDATE,
+            \Spryker\Zed\ProductImage\Dependency\ProductImageEvents::ENTITY_SPY_PRODUCT_IMAGE_SET_TO_PRODUCT_IMAGE_CREATE,
+            \Spryker\Zed\ProductImage\Dependency\ProductImageEvents::ENTITY_SPY_PRODUCT_IMAGE_SET_TO_PRODUCT_IMAGE_UPDATE,
+            \Spryker\Zed\PriceProduct\Dependency\PriceProductEvents::PRICE_CONCRETE_PUBLISH,
+            \Spryker\Zed\PriceProduct\Dependency\PriceProductEvents::ENTITY_SPY_PRICE_PRODUCT_CREATE,
+            \Spryker\Zed\PriceProduct\Dependency\PriceProductEvents::ENTITY_SPY_PRICE_PRODUCT_UPDATE,
+            \Spryker\Zed\ProductSearch\Dependency\ProductSearchEvents::ENTITY_SPY_PRODUCT_SEARCH_CREATE,
+            \Spryker\Zed\ProductSearch\Dependency\ProductSearchEvents::ENTITY_SPY_PRODUCT_SEARCH_UPDATE,
         ];
     }
 }
