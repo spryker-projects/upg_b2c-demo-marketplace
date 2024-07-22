@@ -46,4 +46,50 @@ class LogDependencyProvider extends SprykerLogDependencyProvider
             new GuzzleBodyProcessorPlugin(),
         ];
     }
+    /**
+     * @return list<\Spryker\Shared\Log\Dependency\Plugin\LogHandlerPluginInterface>
+     */
+    protected function getZedSecurityAuditLogHandlerPlugins() : array
+    {
+        return [
+            new Spryker\Zed\Log\Communication\Plugin\Log\AuditLogTagFilterBufferedStreamHandlerPlugin(),
+        ];
+    }
+    /**
+     * @return list<\Spryker\Shared\Log\Dependency\Plugin\LogHandlerPluginInterface>
+     */
+    protected function getMerchantPortalSecurityAuditLogHandlerPlugins() : array
+    {
+        return [
+            new Spryker\Zed\Log\Communication\Plugin\Log\AuditLogTagFilterBufferedStreamHandlerPlugin(),
+        ];
+    }
+    /**
+     * @return list<\Spryker\Shared\Log\Dependency\Plugin\LogProcessorPluginInterface>
+     */
+    protected function getZedSecurityAuditLogProcessorPlugins() : array
+    {
+        return [
+            new Spryker\Zed\Log\Communication\Plugin\Processor\PsrLogMessageProcessorPlugin(),
+            new Spryker\Zed\Log\Communication\Plugin\Processor\EnvironmentProcessorPlugin(),
+            new Spryker\Zed\Log\Communication\Plugin\Processor\ServerProcessorPlugin(),
+            new Spryker\Zed\Log\Communication\Plugin\Log\AuditLogRequestProcessorPlugin(),
+            new Spryker\Zed\Log\Communication\Plugin\Processor\ResponseProcessorPlugin(),
+            new Spryker\Zed\Log\Communication\Plugin\Log\AuditLogMetaDataProcessorPlugin(),
+        ];
+    }
+    /**
+     * @return list<\Spryker\Shared\Log\Dependency\Plugin\LogProcessorPluginInterface>
+     */
+    protected function getMerchantPortalSecurityAuditLogProcessorPlugins() : array
+    {
+        return [
+            new Spryker\Zed\Log\Communication\Plugin\Processor\PsrLogMessageProcessorPlugin(),
+            new Spryker\Zed\Log\Communication\Plugin\Processor\EnvironmentProcessorPlugin(),
+            new Spryker\Zed\Log\Communication\Plugin\Processor\ServerProcessorPlugin(),
+            new Spryker\Zed\Log\Communication\Plugin\Log\AuditLogRequestProcessorPlugin(),
+            new Spryker\Zed\Log\Communication\Plugin\Processor\ResponseProcessorPlugin(),
+            new Spryker\Zed\Log\Communication\Plugin\Log\AuditLogMetaDataProcessorPlugin(),
+        ];
+    }
 }
