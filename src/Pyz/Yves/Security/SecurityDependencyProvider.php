@@ -25,9 +25,10 @@ class SecurityDependencyProvider extends SprykerSecurityDependencyProvider
     protected function getSecurityPlugins(): array
     {
         return [
+            new SprykerShop\Yves\CustomerPage\Plugin\Security\CustomerRememberMeSecurityPlugin(),
+            new SprykerShop\Yves\AgentPage\Plugin\Security\YvesAgentPageSecurityPlugin(),
+            new SprykerShop\Yves\CustomerPage\Plugin\Security\YvesCustomerPageSecurityPlugin(),
             new RememberMeSecurityPlugin(),
-            new AgentPageSecurityPlugin(),
-            new CustomerPageSecurityPlugin(),
             new ValidateCustomerSessionSecurityPlugin(),
             new SaveCustomerSessionSecurityPlugin(),
             new ValidateAgentSessionSecurityPlugin(),

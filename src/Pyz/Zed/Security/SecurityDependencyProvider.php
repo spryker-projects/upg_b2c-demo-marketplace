@@ -24,12 +24,12 @@ class SecurityDependencyProvider extends SprykerSecurityDependencyProvider
     protected function getSecurityPlugins(): array
     {
         return [
-            new UserSessionHandlerSecurityPlugin(),
-            new SystemUserSecurityPlugin(),
-            new MerchantUserSecurityPlugin(),
-            new UserSecurityPlugin(),
-            new OauthUserSecurityPlugin(),
-            new ValidateSessionUserSecurityPlugin(),
+            new Spryker\Zed\User\Communication\Plugin\Security\ZedUserSessionHandlerSecurityPlugin(),
+            new Spryker\Zed\SecuritySystemUser\Communication\Plugin\Security\ZedSystemUserSecurityPlugin(),
+            new Spryker\Zed\SecurityMerchantPortalGui\Communication\Plugin\Security\ZedMerchantUserSecurityPlugin(),
+            new Spryker\Zed\SecurityGui\Communication\Plugin\Security\ZedUserSecurityPlugin(),
+            new Spryker\Zed\SecurityOauthUser\Communication\Plugin\Security\ZedOauthUserSecurityPlugin(),
+            new Spryker\Zed\SessionUserValidation\Communication\Plugin\Security\ZedValidateSessionUserSecurityPlugin(),
             new SaveSessionUserSecurityPlugin(),
         ];
     }
