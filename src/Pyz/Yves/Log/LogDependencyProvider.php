@@ -7,6 +7,7 @@
 
 namespace Pyz\Yves\Log;
 
+use Spryker\Yves\Customer\Plugin\Log\CurrentCustomerDataRequestProcessorPlugin;
 use Spryker\Yves\Log\LogDependencyProvider as SprykerLogDependencyProvider;
 use Spryker\Yves\Log\Plugin\Handler\ExceptionStreamHandlerPlugin;
 use Spryker\Yves\Log\Plugin\Handler\StreamHandlerPlugin;
@@ -70,6 +71,7 @@ class LogDependencyProvider extends SprykerLogDependencyProvider
             new AuditLogRequestProcessorPlugin(),
             new ResponseProcessorPlugin(),
             new AuditLogMetaDataProcessorPlugin(),
+            new CurrentCustomerDataRequestProcessorPlugin(),
         ];
     }
 }
