@@ -33,7 +33,7 @@ class ValidatorDependencyProvider extends SprykerValidatorDependencyProvider
     protected function getConstraintPlugins(): array
     {
         return [
-            new UserPasswordValidatorConstraintPlugin(),
+            new Spryker\Zed\Security\Communication\Plugin\Validator\ZedUserPasswordValidatorConstraintPlugin(),
         ];
     }
 }

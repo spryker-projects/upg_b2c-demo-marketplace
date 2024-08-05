@@ -56,7 +56,7 @@ class ApplicationDependencyProvider extends SprykerApplicationDependencyProvider
             new ErrorHandlerApplicationPlugin(),
             new FormApplicationPlugin(),
             new ValidatorApplicationPlugin(),
-            new SecurityApplicationPlugin(),
+            new Spryker\Zed\Security\Communication\Plugin\Application\ZedSecurityApplicationPlugin(),
             new NumberFormatterApplicationPlugin(),
             new BackofficeStoreApplicationPlugin(),
         ];
@@ -86,7 +86,7 @@ class ApplicationDependencyProvider extends SprykerApplicationDependencyProvider
             new ErrorHandlerApplicationPlugin(),
             new FormApplicationPlugin(),
             new ValidatorApplicationPlugin(),
-            new SecurityApplicationPlugin(),
+            new Spryker\Zed\Security\Communication\Plugin\Application\ZedSecurityApplicationPlugin(),
             new NumberFormatterApplicationPlugin(),
             new BackofficeStoreApplicationPlugin(),
         ];
@@ -104,7 +104,7 @@ class ApplicationDependencyProvider extends SprykerApplicationDependencyProvider
     protected function getBackendGatewayApplicationPlugins(): array
     {
         return [
-            new SecurityApplicationPlugin(),
+            new Spryker\Zed\Security\Communication\Plugin\Application\ZedSecurityApplicationPlugin(),
             new BackendGatewayEventDispatcherApplicationPlugin(),
             new RequestBackendGatewayApplicationPlugin(),
             new StoreBackendGatewayApplicationPlugin(),

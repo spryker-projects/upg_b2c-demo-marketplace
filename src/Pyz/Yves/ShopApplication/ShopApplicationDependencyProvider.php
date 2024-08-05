@@ -270,7 +270,8 @@ class ShopApplicationDependencyProvider extends SprykerShopApplicationDependency
     protected function getApplicationPlugins(): array
     {
         $applicationPlugins = [
-            new HttpApplicationPlugin(),
+            new Spryker\Yves\Security\Plugin\Application\YvesSecurityApplicationPlugin(),
+            new Spryker\Yves\Http\Plugin\Application\YvesHttpApplicationPlugin(),
             new TwigApplicationPlugin(),
             new EventDispatcherApplicationPlugin(),
             new ShopApplicationApplicationPlugin(),
@@ -283,7 +284,6 @@ class ShopApplicationDependencyProvider extends SprykerShopApplicationDependency
             new FlashMessengerApplicationPlugin(),
             new FormApplicationPlugin(),
             new ValidatorApplicationPlugin(),
-            new SecurityApplicationPlugin(),
             new CustomerConfirmationUserCheckerApplicationPlugin(),
         ];
 

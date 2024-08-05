@@ -44,4 +44,50 @@ class LogDependencyProvider extends SprykerLogDependencyProvider
             new GuzzleBodyProcessorPlugin(),
         ];
     }
+    /**
+     * @return list<\Spryker\Shared\Log\Dependency\Plugin\LogHandlerPluginInterface>
+     */
+    protected function getGlueSecurityAuditLogHandlerPlugins() : array
+    {
+        return [
+            new Spryker\Glue\Log\Plugin\Log\AuditLogTagFilterBufferedStreamHandlerPlugin(),
+        ];
+    }
+    /**
+     * @return list<\Spryker\Shared\Log\Dependency\Plugin\LogHandlerPluginInterface>
+     */
+    protected function getGlueBackendSecurityAuditLogHandlerPlugins() : array
+    {
+        return [
+            new Spryker\Glue\Log\Plugin\Log\AuditLogTagFilterBufferedStreamHandlerPlugin(),
+        ];
+    }
+    /**
+     * @return list<\Spryker\Shared\Log\Dependency\Plugin\LogProcessorPluginInterface>
+     */
+    protected function getGlueSecurityAuditLogProcessorPlugins() : array
+    {
+        return [
+            new Spryker\Glue\Log\Plugin\Processor\PsrLogMessageProcessorPlugin(),
+            new Spryker\Glue\Log\Plugin\Processor\EnvironmentProcessorPlugin(),
+            new Spryker\Glue\Log\Plugin\Processor\ServerProcessorPlugin(),
+            new Spryker\Glue\Log\Plugin\Log\AuditLogRequestProcessorPlugin(),
+            new Spryker\Glue\Log\Plugin\Processor\ResponseProcessorPlugin(),
+            new Spryker\Glue\Log\Plugin\Log\AuditLogMetaDataProcessorPlugin(),
+        ];
+    }
+    /**
+     * @return list<\Spryker\Shared\Log\Dependency\Plugin\LogProcessorPluginInterface>
+     */
+    protected function getGlueBackendSecurityAuditLogProcessorPlugins() : array
+    {
+        return [
+            new Spryker\Glue\Log\Plugin\Processor\PsrLogMessageProcessorPlugin(),
+            new Spryker\Glue\Log\Plugin\Processor\EnvironmentProcessorPlugin(),
+            new Spryker\Glue\Log\Plugin\Processor\ServerProcessorPlugin(),
+            new Spryker\Glue\Log\Plugin\Log\AuditLogRequestProcessorPlugin(),
+            new Spryker\Glue\Log\Plugin\Processor\ResponseProcessorPlugin(),
+            new Spryker\Glue\Log\Plugin\Log\AuditLogMetaDataProcessorPlugin(),
+        ];
+    }
 }

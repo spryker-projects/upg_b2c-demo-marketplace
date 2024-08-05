@@ -44,4 +44,27 @@ class LogDependencyProvider extends SprykerLogDependencyProvider
             new GuzzleBodyProcessorPlugin(),
         ];
     }
+    /**
+     * @return list<\Spryker\Shared\Log\Dependency\Plugin\LogHandlerPluginInterface>
+     */
+    protected function getYvesSecurityAuditLogHandlerPlugins() : array
+    {
+        return [
+            new Spryker\Yves\Log\Plugin\Log\AuditLogTagFilterBufferedStreamHandlerPlugin(),
+        ];
+    }
+    /**
+     * @return list<\Spryker\Shared\Log\Dependency\Plugin\LogProcessorPluginInterface>
+     */
+    protected function getYvesSecurityAuditLogProcessorPlugins() : array
+    {
+        return [
+            new Spryker\Yves\Log\Plugin\Processor\PsrLogMessageProcessorPlugin(),
+            new Spryker\Yves\Log\Plugin\Processor\EnvironmentProcessorPlugin(),
+            new Spryker\Yves\Log\Plugin\Processor\ServerProcessorPlugin(),
+            new Spryker\Yves\Log\Plugin\Log\AuditLogRequestProcessorPlugin(),
+            new Spryker\Yves\Log\Plugin\Processor\ResponseProcessorPlugin(),
+            new Spryker\Yves\Log\Plugin\Log\AuditLogMetaDataProcessorPlugin(),
+        ];
+    }
 }
