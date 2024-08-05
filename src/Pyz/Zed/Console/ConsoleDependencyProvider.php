@@ -395,6 +395,7 @@ class ConsoleDependencyProvider extends SprykerConsoleDependencyProvider
             new DateTimeProductConfiguratorBuildFrontendConsole(),
             new DeleteExpiredPushNotificationSubscriptionConsole(),
             new SendPushNotificationConsole(),
+            new Spryker\Zed\Oms\Communication\Console\ProcessCacheWarmUpConsole(),
         ];
 
         $propelCommands = $container->getLocator()->propel()->facade()->getConsoleCommands();

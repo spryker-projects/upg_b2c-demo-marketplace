@@ -212,6 +212,7 @@ class PublisherDependencyProvider extends SprykerPublisherDependencyProvider
             $this->getStoreStoragePlugins(),
             $this->getAssetStoragePlugins(),
             $this->getCustomerStoragePlugins(),
+            $this->getProductMessageBrokerPlugins(),
             $this->getProductExportPlugins(),
             $this->getProductConfigurationStoragePlugins(),
             $this->getProductOfferAvailabilityStoragePlugins(),
@@ -581,20 +582,6 @@ class PublisherDependencyProvider extends SprykerPublisherDependencyProvider
     /**
      * @return array<\Spryker\Zed\PublisherExtension\Dependency\Plugin\PublisherPluginInterface>
      */
-    protected function getProductExportPlugins(): array
-    {
-        return [
-            new ProductConcreteExportedMessageBrokerPublisherPlugin(),
-            new ProductConcreteCreatedMessageBrokerPublisherPlugin(),
-            new ProductConcreteUpdatedMessageBrokerPublisherPlugin(),
-            new ProductConcreteDeletedMessageBrokerPublisherPlugin(),
-            new ProductAbstractUpdatedMessageBrokerPublisherPlugin(),
-        ];
-    }
-
-    /**
-     * @return array<\Spryker\Zed\PublisherExtension\Dependency\Plugin\PublisherPluginInterface>
-     */
     protected function getProductOfferAvailabilityStoragePlugins(): array
     {
         return [
@@ -707,6 +694,20 @@ class PublisherDependencyProvider extends SprykerPublisherDependencyProvider
             new ProductOfferStoreProductOfferShipmentTypeWritePublisherPlugin(),
             new ShipmentTypeProductOfferShipmentTypeWritePublisherPlugin(),
             new ShipmentTypeStoreProductOfferShipmentTypeWritePublisherPlugin(),
+        ];
+    }
+    /**
+     * @return array
+     */
+    public function getProductMessageBrokerPlugins() : array
+    {
+        return [
+            new Spryker\Zed\Product\Communication\Plugin\Publisher\ProductConcreteExportedMessageBrokerPublisherPlugin(),
+            new Spryker\Zed\Product\Communication\Plugin\Publisher\ProductConcreteCreatedMessageBrokerPublisherPlugin(),
+            new Spryker\Zed\Product\Communication\Plugin\Publisher\ProductConcreteUpdatedMessageBrokerPublisherPlugin(),
+            new Spryker\Zed\Product\Communication\Plugin\Publisher\ProductConcreteDeletedMessageBrokerPublisherPlugin(),
+            new Spryker\Zed\Product\Communication\Plugin\Publisher\ProductAbstractUpdatedMessageBrokerPublisherPlugin(),
+            new Spryker\Zed\ProductCategory\Communication\Plugin\Publisher\ProductCategoryProductUpdatedEventTriggerPlugin(),
         ];
     }
 }
